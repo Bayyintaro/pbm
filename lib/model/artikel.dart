@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:petani_kita/screens/list_artikel_details_screen.dart';
 
 class Artikel {
   String title;

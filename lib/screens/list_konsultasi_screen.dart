@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:petani_kita/screens/dash.dart';
+import 'package:petani_kita/screens/home.dart';
 import '../model/konsultasi.dart';
 import 'list_konsultasi_details_screen.dart';
 
 class listkonsultasi extends StatelessWidget {
-  const listkonsultasi({super.key});
+  const listkonsultasi({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,10 @@ class listkonsultasi extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 70,
         centerTitle: true,
-        leading: Icon(Icons.arrow_back_ios_new),
+        leading: BackButton(onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => home()));
+          },),
         title: Text(' Daftar Konsultasi'),
         backgroundColor: Color(0xFF1BBA66),
         bottom: PreferredSize(
@@ -48,7 +53,7 @@ class listkonsultasi extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => SecondRoute(konsultasi))),
+                        builder: (context) => detailkonsultasi(konsultasi))),
               },
               child: Container(
                   decoration: BoxDecoration(
@@ -86,7 +91,7 @@ class listkonsultasi extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          SecondRoute(konsultasi))),
+                                          detailkonsultasi(konsultasi))),
                             },
                             icon: Icon(Icons.arrow_forward_ios_rounded),
                           )

@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:petani_kita/screens/dash.dart';
 
 import '../model/pakarpertanian.dart';
 
 class listpakarpertanian extends StatelessWidget {
-  const listpakarpertanian({super.key});
+  const listpakarpertanian({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         toolbarHeight: 70,
         centerTitle: true,
-        leading: Icon(Icons.arrow_back_ios_new),
+        leading: BackButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => dashboard()));
+          },
+        ),
         title: Text('Pakar Pertanian'),
         backgroundColor: Color(0xFF1BBA66),
         bottom: PreferredSize(
@@ -45,7 +52,12 @@ class listpakarpertanian extends StatelessWidget {
           itemBuilder: (context, index) {
             Pakarpertanian pakarpertanian = pakarpertanianlist[index];
             return InkWell(
-              onTap: () => {},
+              onTap: () => {
+                // Navigator.push(
+                //               context,
+                //               MaterialPageRoute(
+                //                   builder: (context) => dashboard())),
+              },
               child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -84,7 +96,6 @@ class listpakarpertanian extends StatelessWidget {
                   )),
             );
           }),
-          
     );
   }
 }

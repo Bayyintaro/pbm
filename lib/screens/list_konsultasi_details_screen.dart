@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:petani_kita/screens/balasan.dart';
 import '../model/konsultasi.dart';
 
-class SecondRoute extends StatelessWidget {
+class detailkonsultasi extends StatelessWidget {
   final Konsultasi konsultasi;
 
-  const SecondRoute(this.konsultasi, {super.key});
+  const detailkonsultasi(this.konsultasi);
 
   @override
   Widget build(BuildContext context) {

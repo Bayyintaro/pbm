@@ -1,11 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:petani_kita/screens/list_artikel_screen.dart';
 
 class SecondRoute extends StatelessWidget {
   final Map<String, dynamic> article;
 
-  SecondRoute({super.key, required this.article});
+  SecondRoute({required this.article});
 
   @override
   Widget build(BuildContext context) {

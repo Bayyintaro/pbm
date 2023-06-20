@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../model/konsultasi.dart';
+import 'package:petani_kita/screens/list_konsultasi_details_screen.dart';
+import 'package:petani_kita/screens/list_konsultasi_screen.dart';
 
 void main() {
   runApp(balasan());
@@ -13,6 +14,12 @@ class balasan extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
+          leading: BackButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => listkonsultasi()));
+          },
+        ),
           elevation: 0.0,
           backgroundColor: Colors.transparent,
           title: const Text('Konsultasi'),

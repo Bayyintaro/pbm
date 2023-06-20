@@ -1,13 +1,11 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:petani_kita/screens/dash.dart';
 import 'package:petani_kita/screens/list_artikel_details_screen.dart';
-import 'package:http/http.dart' as http;
 
 import '../service.dart';
 
 class listartikel extends StatefulWidget {
-  const listartikel({super.key});
+  const listartikel({Key? key}) : super(key: key);
 
   @override
   State<listartikel> createState() => _listartikelState();
@@ -28,7 +26,10 @@ class _listartikelState extends State<listartikel> {
         appBar: AppBar(
           toolbarHeight: 70,
           centerTitle: true,
-          leading: Icon(Icons.arrow_back_ios_new),
+          leading: BackButton(onPressed: () {
+            Navigator.pop(
+                context, MaterialPageRoute(builder: (context) => dashboard()));
+          },),
           title: Text('Artikel'),
           backgroundColor: Color(0xFF1BBA66),
           bottom: PreferredSize(

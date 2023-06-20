@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:petani_kita/screens/profile.dart';
 
 import 'dash.dart';
 import 'list_konsultasi_screen.dart';
 
 class home extends StatefulWidget {
-  const home({super.key});
+  const home({Key? key}) : super(key: key);
 
   @override
   State<home> createState() => _homeState();
@@ -16,7 +15,7 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   int selectednavbar = 0;
 
-  final tabs = [dashboard(), listkonsultasi(), Profile()];
+  final tabs = [dashboard(), listkonsultasi(), ProfilePage()];
 
   void _changeSelectedNavBar(int index) {
     setState(() {

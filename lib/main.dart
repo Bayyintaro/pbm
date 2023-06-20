@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:petani_kita/screens/home.dart';
 import 'package:petani_kita/screens/login/LoginScreens.dart';
-import 'screens/list_artikel_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override

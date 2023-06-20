@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../model/artikel.dart';
 import '../model/pakarpertanian.dart';
 import '../service.dart';
 import 'list_artikel_details_screen.dart';
@@ -10,7 +8,7 @@ import 'list_artikel_screen.dart';
 import 'list_pakarpertanian_screen.dart';
 
 class dashboard extends StatefulWidget {
-  const dashboard({super.key});
+  const dashboard({Key? key}) : super(key: key);
 
   @override
   State<dashboard> createState() => _dashboardState();
@@ -29,6 +27,7 @@ class _dashboardState extends State<dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           toolbarHeight: 90,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
